@@ -1,0 +1,30 @@
+<p>Dati:</p>
+<p><input [(ngModel)]="nn" /> - Numero azioni possedute inizialmente</p>
+<p><input [(ngModel)]="p" /> - Prezzo singola azione</p>
+<p><input [(ngModel)]="t" /> - Tasso annuo</p>
+<p><input [(ngModel)]="investimentiAnnuiOpp" /> - 1 / Investimenti all'anno</p>
+<p>
+  <input [(ngModel)]="anniInvestimenti" />
+  <button (click)="ngOnInit()">cambia</button>
+  - Anni investimenti
+</p>
+<hr />
+
+<p>Saldo: {{saldo | currency}}</p>
+<p>Dividendo: {{dividendo | currency}}</p>
+<p>Numero mese: {{nMese}}</p>
+
+<br />
+<p>Azioni iniziali: {{nn}}</p>
+<p>Azioni in corso: {{n}}</p>
+<p>Azioni totali: {{n+nn}}</p>
+<p>Azioni tasca mia: {{atm}}</p>
+<br />
+<p>Valore totale: {{n*p + saldo | currency}}</p>
+<p>Guadagno: {{(n-nn-atm+1)*p+saldo | currency}}</p>
+<p>Investimento iniziale: {{nn*p | currency}}</p>
+<p>Investimento in corso: {{atm*p | currency}}</p>
+<p>%: {{(100*((n-atm-nn+1)*p+saldo))/((nn+atm)*p)}}</p>
+<br />
+
+<button (click)="go()">GO</button>
